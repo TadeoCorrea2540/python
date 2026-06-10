@@ -2,8 +2,12 @@ from openai import OpenAI
 
 client= OpenAI()
 
+user_prompt= input("Prompt: ")
+sys_prompt= "Solo una oración.a"
+
 response= client.responses.create(
-    input= "What means CS50? ",
+    input= user_prompt,
+    instructions= sys_prompt,
     model= "gpt-4"
 )
 
